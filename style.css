@@ -1,0 +1,20 @@
+
+body {
+    background-color: #f5eaff;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: lavenderblush;
+}
+
+h2 {
+    color: #E6E0F8;
+}
+
+p {
+    color: #333333;
+    font-size: 16px;
+}
