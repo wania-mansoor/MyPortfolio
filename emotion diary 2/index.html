@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Diary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h2>✦ Emotion Diary</h2>
+    <p>Your feelings, your little world.</p>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>Welcome to Your Emotion Diary</h1>
+        <p>A safe little space to understand your feelings, one day at a time.</p>
+    </section>
+
+    <section class="pet-card">
+        <h2 id="petName">Your Little Dragon</h2>
+        <p id="petStage">Magical Egg 🥚</p>
+
+        <div class="pet-area">
+            <div id="egg" class="egg">
+                <span>✦</span>
+            </div>
+
+            <div id="dragon" class="dragon hidden">
+                🐉
+            </div>
+        </div>
+
+        <p id="petMessage">A little dragon is growing inside!</p>
+
+        <div class="progress">
+            <div id="healthBar"></div>
+        </div>
+
+        <p>Dragon growth: <span id="health">0</span>%</p>
+        <h3>⭐ Points: <span id="points">0</span></h3>
+
+        <button onclick="feedPet()">Feed Your Dragon (10 points)</button>
+        <p id="feedMessage"></p>
+
+        <div class="customise">
+            <h3>Customise your dragon</h3>
+            <input id="nameInput" type="text" placeholder="Enter dragon's name">
+            <select id="accessory">
+                <option value="">No accessory</option>
+                <option value="👑">Crown 👑</option>
+                <option value="🌸">Flower 🌸</option>
+                <option value="✨">Star ✨</option>
+                <option value="💜">Purple charm 💜</option>
+            </select>
+            <button onclick="customisePet()">Save</button>
+        </div>
+    </section>
+
+    <section class="diary-card">
+        <h2>How are you feeling today?</h2>
+        <p>Choose the mood that best describes how you feel.</p>
+
+        <div class="moods">
+            <button onclick="chooseMood('Happy')">☀️ Happy</button>
+            <button onclick="chooseMood('Calm')">🌿 Calm</button>
+            <button onclick="chooseMood('Excited')">✨ Excited</button>
+            <button onclick="chooseMood('Sad')">🌧️ Sad</button>
+            <button onclick="chooseMood('Anxious')">🫧 Anxious</button>
+            <button onclick="chooseMood('Angry')">🌋 Angry</button>
+            <button onclick="chooseMood('Tired')">🌙 Tired</button>
+            <button onclick="chooseMood('Grateful')">💜 Grateful</button>
+        </div>
+
+        <p id="selectedMood">Selected mood: None</p>
+
+        <h3>Let's reflect on your feelings</h3>
+
+        <label>What do you think is contributing to that mood today?</label>
+        <textarea id="q1" placeholder="Write your thoughts..."></textarea>
+
+        <label>How is this mood affecting your energy levels or your focus today?</label>
+        <textarea id="q2" placeholder="Write your thoughts..."></textarea>
+
+        <label>On a scale of 1 to 10, how strong is this feeling right now?</label>
+        <input type="range" id="intensity" min="1" max="10" value="5">
+        <p>Intensity: <span id="intensityValue">5</span>/10</p>
+
+        <label>Does this mood feel familiar, or is it a bit unusual for you?</label>
+        <textarea id="q3" placeholder="Write your thoughts..."></textarea>
+
+        <label>Is there another emotion hiding underneath this one?</label>
+        <textarea id="q4" placeholder="Write your thoughts..."></textarea>
+
+        <h3>Write your daily story</h3>
+        <textarea id="story" placeholder="Tell us about your day..."></textarea>
+
+        <button onclick="saveEntry()">Save Diary Entry (+5 points)</button>
+        <p id="saveMessage"></p>
+    </section>
+
+    <section class="chart-card">
+        <h2>Your Weekly Mood Chart</h2>
+        <p>See how your mood intensity changes during the week.</p>
+        <div id="weeklyChart" class="chart"></div>
+    </section>
+
+    <section class="history-card">
+        <h2>Your Diary History</h2>
+        <div id="history"></div>
+    </section>
+</main>
+
+<footer>
+    <p>Made with 💜 for your little moments.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

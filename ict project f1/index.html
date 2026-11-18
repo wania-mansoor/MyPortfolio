@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX F1 | Drivers Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="#home" class="logo">
+        <span>APEX</span> <b>F1</b>
+    </a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#drivers">Drivers</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <a href="#teams">Teams</a>
+    </nav>
+
+    <a href="#drivers" class="nav-btn">EXPLORE DRIVERS ↗</a>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+        <span class="eyebrow">THE WORLD OF MOTORSPORT</span>
+
+        <h1>
+            SPEED.<br>
+            SKILL.<br>
+            <span>LEGACY.</span>
+        </h1>
+
+        <p>
+            Explore the drivers, discover their stories,
+            and dive into the world of Formula racing.
+        </p>
+
+        <a href="#drivers" class="primary-btn">
+            EXPLORE THE GRID →
+        </a>
+
+        <div class="hero-stats">
+            <div>
+                <h2 id="driverCount">8</h2>
+                <p>DRIVERS</p>
+            </div>
+
+            <div>
+                <h2>4</h2>
+                <p>TEAMS</p>
+            </div>
+
+            <div>
+                <h2>01</h2>
+                <p>MISSION</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-visual">
+        <div class="speed-circle"></div>
+        <div class="hero-car">🏎️</div>
+        <div class="hero-caption">
+            <span>FULL THROTTLE</span>
+            <h2>CHASE THE LIMIT.</h2>
+        </div>
+    </div>
+
+    <div class="hero-bottom">APEX F1 • DRIVER INTELLIGENCE HUB</div>
+
+</section>
+
+
+<!-- DRIVER SECTION -->
+
+<section class="section" id="drivers">
+
+    <div class="section-title">
+        <div>
+            <span class="eyebrow">MEET THE GRID</span>
+            <h1>THE DRIVERS<span>.</span></h1>
+            <p>Discover the people behind the helmets.</p>
+        </div>
+
+        <div class="driver-total">
+            <span id="visibleCount">08</span> DRIVERS
+        </div>
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="filter-bar">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search driver name..."
+            oninput="filterDrivers()"
+        >
+
+        <select id="teamFilter" onchange="filterDrivers()">
+            <option value="All">ALL TEAMS</option>
+            <option value="Red Bull">RED BULL</option>
+            <option value="Ferrari">FERRARI</option>
+            <option value="McLaren">McLAREN</option>
+            <option value="Mercedes">MERCEDES</option>
+        </select>
+
+    </div>
+
+
+    <!-- DRIVER CARDS -->
+
+    <div class="driver-grid" id="driverGrid"></div>
+
+    <p class="no-results" id="noResults">
+        No drivers found. Try another search.
+    </p>
+
+</section>
+
+
+<!-- LEADERBOARD -->
+
+<section class="section leaderboard-section" id="leaderboard">
+
+    <div class="section-title">
+        <div>
+            <span class="eyebrow">THE COMPETITION</span>
+            <h1>DRIVER <span>STANDINGS.</span></h1>
+            <p>Explore the sample championship leaderboard.</p>
+        </div>
+    </div>
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>POS</th>
+                    <th>DRIVER</th>
+                    <th>TEAM</th>
+                    <th>WINS</th>
+                    <th>PODIUMS</th>
+                    <th>POINTS</th>
+                </tr>
+            </thead>
+
+            <tbody id="leaderboardBody"></tbody>
+
+        </table>
+
+        <p class="data-note">
+            Illustrative project data — not official 2026 standings.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- TEAMS -->
+
+<section class="section" id="teams">
+
+    <div class="section-title">
+        <div>
+            <span class="eyebrow">THE CONSTRUCTORS</span>
+            <h1>THE <span>TEAMS.</span></h1>
+            <p>Four iconic racing teams in our demo grid.</p>
+        </div>
+    </div>
+
+    <div class="team-grid">
+
+        <div class="team-card redbull">
+            <div class="team-icon">🐂</div>
+            <h2>RED BULL</h2>
+            <p>RACING</p>
+            <div class="team-line"></div>
+            <small>MAX VERSTAPPEN • DEMO</small>
+        </div>
+
+        <div class="team-card ferrari">
+            <div class="team-icon">🐎</div>
+            <h2>FERRARI</h2>
+            <p>SCUDERIA</p>
+            <div class="team-line"></div>
+            <small>CHARLES LECLERC • DEMO</small>
+        </div>
+
+        <div class="team-card mclaren">
+            <div class="team-icon">🏁</div>
+            <h2>McLAREN</h2>
+            <p>RACING</p>
+            <div class="team-line"></div>
+            <small>LANDO NORRIS • DEMO</small>
+        </div>
+
+        <div class="team-card mercedes">
+            <div class="team-icon">⭐</div>
+            <h2>MERCEDES</h2>
+            <p>AMG PETRONAS</p>
+            <div class="team-line"></div>
+            <small>GEORGE RUSSELL • DEMO</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FAVOURITES -->
+
+<section class="section favourites-section">
+
+    <div class="section-title">
+        <div>
+            <span class="eyebrow">YOUR PERSONAL GRID</span>
+            <h1>YOUR <span>FAVOURITES.</span></h1>
+            <p>Keep your favourite drivers close.</p>
+        </div>
+    </div>
+
+    <div id="favourites" class="favourites-box">
+        <p>No favourites yet. Tap the ☆ on a driver card!</p>
+    </div>
+
+</section>
+
+
+<!-- DRIVER PROFILE POPUP -->
+
+<div class="modal" id="driverModal">
+
+    <div class="modal-content">
+
+        <button class="close-btn" onclick="closeModal()">✕</button>
+
+        <div id="modalDetails"></div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    <h2>APEX <span>F1</span></h2>
+    <p>BUILT FOR THE LOVE OF RACING.</p>
+    <small>Student ICT Project • Educational Demo</small>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
