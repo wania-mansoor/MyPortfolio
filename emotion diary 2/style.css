@@ -1,0 +1,274 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #17112e, #302052, #172d50);
+    color: white;
+    min-height: 100vh;
+}
+
+header {
+    padding: 25px;
+    text-align: center;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(15px);
+}
+
+header h2 {
+    color: #cbb7ff;
+}
+
+header p {
+    color: #b9b1d4;
+    font-size: 13px;
+}
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+section {
+    margin: 30px 0;
+    padding: 30px;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    backdrop-filter: blur(15px);
+}
+
+.hero {
+    text-align: center;
+    padding: 45px 20px;
+}
+
+.hero h1 {
+    color: #d4c3ff;
+    margin-bottom: 12px;
+}
+
+.hero p, section p {
+    color: #c2bad8;
+}
+
+.pet-card {
+    text-align: center;
+}
+
+.pet-area {
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.egg {
+    width: 125px;
+    height: 155px;
+    border-radius: 50% 50% 45% 45%;
+    background: linear-gradient(135deg, #e3faff, #80c9ef, #9e8cdd);
+    box-shadow: inset -12px -12px 25px #536aa355,
+                inset 10px 10px 20px #ffffffaa,
+                0 15px 35px #9b8ee855;
+    display: grid;
+    place-items: center;
+    color: #b59ae8;
+    font-size: 35px;
+    animation: float 3s infinite ease-in-out;
+    position: relative;
+}
+
+.egg::before, .egg::after {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #bda5ef;
+}
+
+.egg::before {
+    top: 40px;
+    left: 25px;
+}
+
+.egg::after {
+    bottom: 35px;
+    right: 24px;
+}
+
+.dragon {
+    font-size: 115px;
+    filter: drop-shadow(0 12px 12px #9c8ce888);
+    animation: float 3s infinite ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.progress {
+    width: 80%;
+    height: 12px;
+    margin: 15px auto;
+    background: #ffffff22;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#healthBar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #8bdcf3, #b99bf3);
+    transition: width 0.5s;
+}
+
+button {
+    border: none;
+    border-radius: 12px;
+    padding: 12px 17px;
+    margin: 7px 3px;
+    background: linear-gradient(135deg, #a78be8, #77bfe9);
+    color: #201638;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px #a58ce655;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0 18px;
+    border: 1px solid #ffffff30;
+    border-radius: 12px;
+    background: #ffffff12;
+    color: white;
+    font-family: inherit;
+    outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #bca4f2;
+}
+
+textarea {
+    min-height: 75px;
+    resize: vertical;
+}
+
+select option {
+    background: #302052;
+}
+
+label {
+    display: block;
+    color: #d6c8f5;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.moods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.moods button {
+    min-width: 105px;
+}
+
+#selectedMood {
+    color: #cbb7ff;
+    margin: 15px 0;
+}
+
+.customise {
+    max-width: 400px;
+    margin: 25px auto 0;
+}
+
+.chart {
+    height: 180px;
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 25px;
+    border-bottom: 1px solid #ffffff30;
+}
+
+.chart-column {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #d2c7ec;
+}
+
+.chart-bar {
+    width: 65%;
+    max-width: 35px;
+    margin: 0 auto 8px;
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(#bda4f4, #75c9e9);
+    min-height: 4px;
+    transition: height 0.4s;
+}
+
+.entry {
+    padding: 15px;
+    margin-top: 12px;
+    border-radius: 12px;
+    background: #ffffff0c;
+    border: 1px solid #ffffff15;
+}
+
+.entry h3 {
+    color: #cbb7ff;
+    margin-bottom: 6px;
+}
+
+.entry p {
+    margin: 6px 0;
+    overflow-wrap: anywhere;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #bdb1d7;
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 94%;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 25px;
+    }
+}

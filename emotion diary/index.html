@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purrfectly Me | Emotion Diary</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">🐾 Purrfectly Me</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#diary">My Diary</a>
+        <a href="#insights">Mood Insights</a>
+        <a href="#rewards">Rewards</a>
+    </nav>
+
+    <div class="points">
+        ⭐ <span id="points">0</span> Points
+    </div>
+</header>
+
+<main>
+
+    <!-- HOME SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+            <span class="tag">YOUR LITTLE HAPPY PLACE ✨</span>
+
+            <h1>Your feelings<br>
+                deserve a <span>little space.</span>
+            </h1>
+
+            <p>
+                Every day has a story. Write yours, understand
+                your feelings and make your little companion happy!
+            </p>
+
+            <a href="#diary" class="main-btn">Write Today's Diary ✍️</a>
+
+            <div class="mini-stats">
+                <div>
+                    <h2 id="totalEntries">0</h2>
+                    <p>Diary Entries</p>
+                </div>
+
+                <div>
+                    <h2 id="totalFed">0</h2>
+                    <p>Times Fed 🐱</p>
+                </div>
+
+                <div>
+                    <h2 id="totalDays">0</h2>
+                    <p>Days Written</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CAT CARD -->
+        <div class="cat-card">
+
+            <div class="floating-heart">💗</div>
+            <div class="floating-star">✨</div>
+
+            <span class="cat-label">YOUR LITTLE COMPANION</span>
+
+            <div class="cat-character" id="cat">
+                🐈
+            </div>
+
+            <h2 id="catName">Mochi</h2>
+
+            <p id="catMessage">Mochi is waiting for you!</p>
+
+            <div class="love-bar">
+                <div id="loveProgress"></div>
+            </div>
+
+            <p class="love-text">
+                Friendship level: <span id="loveLevel">1</span>
+            </p>
+
+            <button class="feed-btn" onclick="feedCat()">
+                🥛 Feed Mochi (10 points)
+            </button>
+
+            <p class="cat-note">A little love goes a long way 💕</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- DIARY SECTION -->
+    <section class="section" id="diary">
+
+        <div class="section-heading">
+            <span class="tag">A MOMENT FOR YOURSELF</span>
+            <h1>How are you feeling today?</h1>
+            <p>There is no right or wrong way to feel.</p>
+        </div>
+
+        <div class="diary-card">
+
+            <label for="entryDate">Today's Date</label>
+            <input type="date" id="entryDate">
+
+            <h3>Choose your mood</h3>
+
+            <div class="mood-options">
+
+                <button class="mood" data-mood="Happy" onclick="selectMood(this)">
+                    😊 <span>Happy</span>
+                </button>
+
+                <button class="mood" data-mood="Sad" onclick="selectMood(this)">
+                    😢 <span>Sad</span>
+                </button>
+
+                <button class="mood" data-mood="Angry" onclick="selectMood(this)">
+                    😠 <span>Angry</span>
+                </button>
+
+                <button class="mood" data-mood="Anxious" onclick="selectMood(this)">
+                    😟 <span>Anxious</span>
+                </button>
+
+                <button class="mood" data-mood="Calm" onclick="selectMood(this)">
+                    😌 <span>Calm</span>
+                </button>
+
+                <button class="mood" data-mood="Excited" onclick="selectMood(this)">
+                    🤩 <span>Excited</span>
+                </button>
+
+            </div>
+
+            <label for="story">Tell us about your day</label>
+
+            <textarea
+                id="story"
+                placeholder="What happened today? Write anything you want..."
+                rows="6">
+            </textarea>
+
+            <button class="main-btn save-btn" onclick="saveEntry()">
+                Save My Diary 💜
+            </button>
+
+            <p class="small-note">
+                Your entries are saved in this browser.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MOOD INSIGHTS -->
+    <section class="section" id="insights">
+
+        <div class="section-heading">
+            <span class="tag">GET TO KNOW YOURSELF</span>
+            <h1>Your Mood Insights 🌷</h1>
+            <p>Little reflections based on your recent diary entries.</p>
+        </div>
+
+        <div class="insight-grid">
+
+            <div class="insight-card">
+                <span>🌈</span>
+                <h3>Most Common Mood</h3>
+                <h2 id="commonMood">No data yet</h2>
+                <p>Your most frequently recorded emotion.</p>
+            </div>
+
+            <div class="insight-card">
+                <span>💭</span>
+                <h3>Your Reflection</h3>
+                <h2 id="moodInsight">Start writing!</h2>
+                <p id="insightDescription">
+                    Your mood patterns will appear here.
+                </p>
+            </div>
+
+            <div class="insight-card">
+                <span>🌻</span>
+                <h3>Tomorrow's Intention</h3>
+                <h2 id="tomorrowMood">Choose a goal</h2>
+                <p>Set a gentle intention for tomorrow.</p>
+                <select id="intention" onchange="saveIntention()">
+                    <option value="">Choose an intention</option>
+                    <option>Stay positive</option>
+                    <option>Take things slowly</option>
+                    <option>Make time for myself</option>
+                    <option>Try something new</option>
+                    <option>Be kind to myself</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="history-card">
+            <h2>📖 Your Recent Entries</h2>
+            <div id="history">
+                <p class="empty">Your diary entries will appear here.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- REWARDS SECTION -->
+    <section class="section rewards-section" id="rewards">
+
+        <div class="section-heading">
+            <span class="tag">LITTLE WINS MATTER</span>
+            <h1>Your Achievements 🏆</h1>
+            <p>Every entry is a step towards understanding yourself.</p>
+        </div>
+
+        <div class="reward-grid">
+
+            <div class="reward-card" id="badge1">
+                <span>🌱</span>
+                <h3>First Step</h3>
+                <p>Write your first diary entry.</p>
+                <small>5 points</small>
+            </div>
+
+            <div class="reward-card" id="badge2">
+                <span>🌸</span>
+                <h3>Little Explorer</h3>
+                <p>Write 5 diary entries.</p>
+                <small>5 entries</small>
+            </div>
+
+            <div class="reward-card" id="badge3">
+                <span>💎</span>
+                <h3>Emotion Master</h3>
+                <p>Write 10 diary entries.</p>
+                <small>10 entries</small>
+            </div>
+
+            <div class="reward-card" id="badge4">
+                <span>🐱</span>
+                <h3>Cat's Best Friend</h3>
+                <p>Feed Mochi 5 times.</p>
+                <small>5 feeds</small>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <h2>🐾 Purrfectly Me</h2>
+    <p>Your feelings matter. Always.</p>
+    <p>Made with 💜</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
